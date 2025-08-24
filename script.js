@@ -92,7 +92,7 @@ function handleOrder(event) {
 // Function to save request to backend
 async function saveRequest(request) {
     try {
-        const response = await fetch('http://localhost:3000/api/requests', {
+    const response = await fetch('/.netlify/functions/request-approval-fix', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -1853,7 +1853,7 @@ async function loadRequests() {
         
         try {
             // Fetch requests from backend
-            const response = await fetch('http://localhost:3000/api/requests');
+            const response = await fetch('/.netlify/functions/request-approval-fix');
             
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -2308,7 +2308,7 @@ function handleLoginFormSubmission() {
             }
             
             try {
-                const response = await fetch('http://localhost:3000/api/login', {
+                const response = await fetch('/.netlify/functions/login-fix', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -2453,7 +2453,7 @@ function handleRegistrationFormSubmission() {
             }
             
             try {
-                const response = await fetch('http://localhost:3000/api/register', {
+                const response = await fetch('/.netlify/functions/register-fix', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -2514,7 +2514,7 @@ function handleNameChangeFormSubmission() {
             }
             
             try {
-                const response = await fetch('http://localhost:3000/api/user/name', {
+                const response = await fetch('/.netlify/functions/user-name-fix', {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',
@@ -2592,7 +2592,7 @@ function handlePasswordChangeFormSubmission() {
             }
             
             try {
-                const response = await fetch('http://localhost:3000/api/user/password', {
+                const response = await fetch('/.netlify/functions/user-password-fix', {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',

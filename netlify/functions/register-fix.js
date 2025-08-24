@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-// MongoDB connection (reuse global connection if possible)
 let conn = null;
 async function connectToDatabase() {
   if (conn == null) {
@@ -14,7 +13,6 @@ async function connectToDatabase() {
   return conn;
 }
 
-// User Schema
 const userSchema = new mongoose.Schema({
   name: String,
   email: { type: String, unique: true },
@@ -33,49 +31,40 @@ exports.handler = async function(event, context) {
   }
 
   try {
-    const { email, password } = JSON.parse(event.body);
+    const { name, email, password } = JSON.parse(event.body);
 
-    const user = await User.findOne({ email });
-    if (!user) {
+    // Check if user already exists
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
       return {
         statusCode: 400,
-        body: JSON.stringify({ error: 'Invalid credentials' }),
+        body: JSON.stringify({ error: 'User already exists' }),
       };
     }
 
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) {
-      return {
-        statusCode: 400,
-        body: JSON.stringify({ error: 'Invalid credentials' }),
-      };
-    }
+    // Hash password
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
 
+    // Create new user
+    const user = new User({
+      name,
+      email,
+      password: hashedPassword
+    });
+    await user.save();
+
+    // Generate JWT token
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET || 'fallback_secret', { expiresIn: '1h' });
 
     return {
-      statusCode: 200,
+      statusCode: 201,
       body: JSON.stringify({ token, name: user.name }),
     };
   } catch (error) {
     return {
-      statusCode: 500,
+      statusCode: 400,
       body: JSON.stringify({ error: error.message }),
     };
   }
 };
-        // Store token and user name
-        if (data.token) localStorage.setItem('authToken', data.token);
-        if (data.name) localStorage.setItem('userName', data.name);
-
-        // Redirect to Request Approval page
-        window.location.href = 'request-approval.html';
-      },
-      true // capture
-    );
-  }
-
-  // Override any earlier definition and initialize on DOMContentLoaded
-  window.handleLoginFormSubmission = handleLoginFormSubmission;
-  document.addEventListener('DOMContentLoaded', handleLoginFormSubmission);
-})();

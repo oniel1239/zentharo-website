@@ -1,19 +1,23 @@
+
 [build]
-  publish = "."  # Deploy all static files from the root directory (HTML, JS, CSS)
+  publish = "."
+
 
 [[redirects]]
-  from = "/api/*"  # Proxy all API calls (e.g., /api/requests, /api/login) from frontend JS
-  to = "https://your-backend-url.com/api/:splat"  # Replace with your actual backend host URL (e.g., https://zentharo-backend.onrender.com/api/:splat)
-  status = 200  # Proxy without browser redirect (invisible to user)
+  from = "/api/*"
+  to = "https://your-backend-url.com/api/:splat"
+  status = 200
+
 
 [[headers]]
-  for = "/*"  # Apply to all paths
+  for = "/*"
   [headers.values]
-    Cache-Control = "public, max-age=3600"  # Cache static assets for 1 hour
-    X-Frame-Options = "DENY"  # Prevent clickjacking
-    X-Content-Type-Options = "nosniff"  # Prevent MIME-type sniffing
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://your-backend-url.com;"  # Restrict sources; update connect-src with your backend URL
+    Cache-Control = "public, max-age=3600"
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://your-backend-url.com;"
+
 
 [context.production]
   [context.production.environment]
-    ENV = "production"  # Flag for JS to use production mode (e.g., disable dev logs)
+    ENV = "production"

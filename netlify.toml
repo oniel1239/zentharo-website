@@ -6,5 +6,3 @@
 
 [context.production.environment]
   ENV = "production"
-  API_URL = "https://oniel1239.github.io/zentharo-website/"
-  GITHUB_TOKEN = "ghp_3609542f4d87660432317b6029a13731c542"

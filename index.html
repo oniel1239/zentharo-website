@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zentharo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico"> <!-- Optional: Add a favicon -->
+</head>
+
+<body>
+    <!-- Include header -->
+    <!-- Particle Background Canvas -->
+    <canvas id="particle-canvas" class="particles"></canvas>
+    <nav>
+        <div class="logo"> <span class="highlight"></span></div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#start-project">Start Project</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="user-info">
+            <span id="userNameDisplay"></span>
+        </div>
+        <div class="hamburger">☰</div>
+    </nav>
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>Zentharo Software Solutions</h1>
+            <h2>Unleash Digital Brilliance</h2>
+            <p class="hero-sub">Empowering your vision with world-class software, web, and mobile solutions.</p>
+        </div>
+        <div class="hero-bg-effect"></div>
+    </header>
+
+    <main>
+        <section id="services" class="services">
+            <h2>Our Software Development Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-cogs"></i></div>
+                    <h3>Custom Software Development</h3>
+                    <p>End-to-end development of tailored software solutions to streamline your business operations.</p>
+                    <input type="checkbox" name="service" value="1800"> Select
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Web & Mobile App Development</h3>
+                    <p>Design and build responsive websites and mobile applications for all platforms.</p>
+                    <input type="checkbox" name="service" value="2200"> Select
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-database"></i></div>
+                    <h3>Database Solutions</h3>
+                    <p>High-performance, secure database design, implementation, and optimization.</p>
+                    <input type="checkbox" name="service" value="750"> Select
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>IT Consulting & Digital Transformation</h3>
+                    <p>Expert advice and strategy for digital transformation, cloud migration, and IT modernization.</p>
+                    <input type="checkbox" name="service" value="1000"> Select
+                </div>
+            </div>
+        </section>
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>“Zentharo delivered our project ahead of schedule with flawless execution. Their team is truly
+                        world-class!”</p>
+                    <span>- Sarah L., Tech Startup CEO</span>
+                </div>
+                <div class="testimonial-card">
+                    <p>“The custom software solution transformed our workflow and increased productivity by 40%. Highly
+                        recommended.”</p>
+                    <span>- Mark T., Operations Manager</span>
+                </div>
+                <div class="testimonial-card">
+                    <p>“Professional, creative, and always available. Our new app is a game changer for our business.”
+                    </p>
+                    <span>- Priya S., Retail Business Owner</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="start-project" class="ordering">
+            <h2>Start Your Project</h2>
+            <form id="orderForm" onsubmit="handleOrder(event)">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Full Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                </div>
+                <button type="submit" class="order-button">Request Proposal</button>
+            </form>
+        </section>
+
+        <section id="about" class="about-us">
+            <h2>About Me</h2>
+            <p>Welcome to Zentharo Software Solutions! I’m Oniel Robin, a passionate Fullstack Developer dedicated to
+                transforming ideas into powerful digital experiences. With a decade of hands-on expertise, I deliver
+                robust software, scalable web and mobile apps, and strategic IT solutions for businesses of all sizes.
+                My mission: empower you with technology that drives growth, efficiency, and success.</p>
+            <div class="team-highlight">
+                <div class="team-member">
+                    <h4>Oniel Robin</h4>
+                    <span>Fullstack Developer</span>
+                    <span class="about-tagline">Building digital excellence, one project at a time.</span>
+                </div>
+            </div>
+            <button class="cta-button" onclick="scrollToSection('contact')">Get in Touch</button>
+        </section>
+        <!-- Vision & Impact Section (Mind Blowing) -->
+        <section class="vision-impact">
+            <div class="vision-bg">
+                <video autoplay loop muted playsinline class="vision-video-bg">
+                    <source src="https://www.coverr.co/s3/mp4/coverr-coding-on-laptop-1575.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="vision-content">
+                <h2>Vision & Impact</h2>
+                <p class="vision-quote">“I believe in code that inspires, empowers, and transforms.”</p>
+                <p class="vision-story">From humble beginnings to delivering digital solutions worldwide, my journey is
+                    fueled by a relentless passion for innovation and excellence. Every project is a new
+                    adventure—crafted with precision, creativity, and a drive to make a real difference for my clients.
+                </p>
+                <div class="stats-bar">
+                    <div class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Projects Delivered</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">10</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Client Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-us">
+            <h2>Contact Us</h2>
+            <p>Have questions or need a personalized quote? We're here to help!</p>
+            <div class="contact-info">
+                <ul>
+                    <li><i class="fas fa-envelope"></i> Email: Oliverkcw199@gmail.com</li>
+                    <li><i class="fas fa-phone"></i> Phone: +92 (347) 371-6434</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Address: Clifton, Karachi, Pakistan</li>
+                </ul>
+            </div>
+            <form class="contact-form" onsubmit="handleContactSubmit(event)">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="order-button">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Zentharo <span class="highlight">Software Solutions</span></div>
+            <div class="footer-social-links">
+                <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <p>© 2025 Zentharo Software Solutions. All rights reserved.</p>
+    </footer>
+
+    <!-- Popup for Order Confirmation -->
+    <div id="orderPopup" class="popup">
+        <div class="popup-content">
+            <h2>Order Confirmation</h2>
+            <div id="popupDetails"></div>
+            <button onclick="closePopup()" class="order-button">Close</button>
+        </div>
+    </div>
+    
+    <!-- Popup for Contact Message -->
+    <div id="contactPopup" class="popup">
+        <div class="popup-content">
+            <h2>Message Sent</h2>
+            <p>Thank you for your message. Your message is important to us and we will get back to you as soon as possible.</p>
+            <button onclick="closeContactPopup()" class="order-button">Close</button>
+        </div>
+    </div>
+
+    <!-- Font Awesome for icons (optional, include in head for icons) -->
+    <script src="https://kit.fontawesome.com/4b2e8e6e6a.js" crossorigin="anonymous"></script>
+    <button class="floating-cta" onclick="scrollToSection('start-project')">Start Your Project</button>
+    <script src="script.js"></script>
+    <script>
+        (function() {
+            // Professional come-and-go scroll animations with alternating directions and staggered timing
+            function initScrollAnimations() {
+                const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+                // Helper to apply an initial animation class if none is present
+                function seed(el, cls) {
+                    if (!el) return;
+                    if (!el.classList.contains('animate-left') &&
+                        !el.classList.contains('animate-right') &&
+                        !el.classList.contains('animate-bottom')) {
+                        el.classList.add(cls);
+                    }
+                }
+
+                // Sections that should fade/slide from bottom
+                const sectionSelectors = [
+                    '.services', '.ordering', '.about-us', '.testimonials',
+                    '.vision-impact', '.vision-content', '.contact-us',
+                    'header .hero-content', 'footer'
+                ];
+                const sectionNodes = Array.from(document.querySelectorAll(sectionSelectors.join(',')));
+                sectionNodes.forEach(el => seed(el, 'animate-bottom'));
+
+                // Alternating left/right for grid-like columns with a nice stagger
+                const targets = new Set(sectionNodes);
+                const stagger = (nodes) => {
+                    nodes.forEach((el, i) => {
+                        const dirClass = (i % 2 === 0) ? 'animate-left' : 'animate-right';
+                        seed(el, dirClass);
+                        // Stagger delays for a cascading effect
+                        el.style.transitionDelay = `${Math.min(i * 80, 480)}ms`;
+                        targets.add(el);
+                    });
+                };
+
+                stagger(document.querySelectorAll('.services-grid .service-card'));
+                stagger(document.querySelectorAll('.testimonials-grid .testimonial-card'));
+                stagger(document.querySelectorAll('.stats-bar .stat'));
+
+                // If user prefers reduced motion, show immediately without animation
+                if (prefersReduced) {
+                    targets.forEach(el => {
+                        el.classList.add('in-view');
+                        el.style.transitionDelay = '0ms';
+                    });
+                    return;
+                }
+
+                // Observer toggles .in-view for "come and go" effect
+                const io = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('in-view');
+                        } else {
+                            entry.target.classList.remove('in-view');
+                        }
+                    });
+                }, {
+                    root: null,
+                    threshold: 0.2,
+                    rootMargin: '0px 0px -12% 0px'
+                });
+
+                targets.forEach(el => io.observe(el));
+            }
+
+            function initNavBehavior() {
+                const nav = document.querySelector('nav');
+                const header = document.querySelector('header');
+                if (!nav) return;
+
+                let ticking = false;
+                function onScroll() {
+                    const y = window.scrollY || window.pageYOffset || 0;
+                    if (y > 100) {
+                        nav.classList.add('scrolled');
+                        if (header) header.classList.add('small');
+                    } else {
+                        nav.classList.remove('scrolled');
+                        if (header) header.classList.remove('small');
+                    }
+                    ticking = false;
+                }
+                window.addEventListener('scroll', () => {
+                    if (!ticking) {
+                        window.requestAnimationFrame(onScroll);
+                        ticking = true;
+                    }
+                }, { passive: true });
+                onScroll();
+            }
+
+            function initHamburger() {
+                const hamburger = document.querySelector('.hamburger');
+                const navLinks = document.querySelector('.nav-links');
+                if (!hamburger || !navLinks) return;
+                hamburger.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
+                navLinks.addEventListener('click', (e) => {
+                    const target = e.target;
+                    if (target && target.tagName === 'A') {
+                        navLinks.classList.remove('active');
+                    }
+                });
+            }
+
+            function initAnchorSmoothScroll() {
+                const headerOffsetPx = 72; // approximate header height when scrolled
+                document.querySelectorAll('a[href^="#"]').forEach(a => {
+                    a.addEventListener('click', (e) => {
+                        const href = a.getAttribute('href');
+                        if (!href || href.length < 2) return;
+                        const id = href.slice(1);
+                        const el = document.getElementById(id);
+                        if (!el) return;
+                        e.preventDefault();
+                        const rect = el.getBoundingClientRect();
+                        const absoluteY = rect.top + window.pageYOffset - headerOffsetPx;
+                        window.scrollTo({ top: absoluteY, behavior: 'smooth' });
+                    });
+                });
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', () => {
+                    initScrollAnimations();
+                    initNavBehavior();
+                    initHamburger();
+                    initAnchorSmoothScroll();
+                });
+            } else {
+                initScrollAnimations();
+                initNavBehavior();
+                initHamburger();
+                initAnchorSmoothScroll();
+            }
+        })();
+    </script>
+</body>
+
+</html>

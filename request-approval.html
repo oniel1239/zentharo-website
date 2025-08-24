@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Approval | Zentharo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+    <!-- Include header -->
+    <!-- Particle Background Canvas -->
+    <canvas id="particle-canvas" class="particles"></canvas>
+    <nav>
+        <div class="logo"> <span class="highlight"></span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="request-approval.html" class="active">Requests</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="#" id="logoutLink">Logout</a></li>
+        </ul>
+        <div class="user-info">
+            <span id="userNameDisplay"></span>
+        </div>
+        <div class="hamburger">☰</div>
+    </nav>
+    <div class="user-info-display"></div>
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>Request Approval</h1>
+            <h2>Manage Your Project Requests</h2>
+            <p class="hero-sub">View and manage all your submitted requests and their approval status.</p>
+        </div>
+        <div class="hero-bg-effect"></div>
+    </header>
+
+    <main>
+        <section class="request-approval-section">
+            <h2>Your Requests</h2>
+            <div class="requests-scroll-container">
+                <div class="requests-container">
+                    <!-- Requests will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Include footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Zentharo <span class="highlight">Software Solutions</span></div>
+            <div class="footer-social-links">
+                <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <p>© 2025 Zentharo Software Solutions. All rights reserved.</p>
+    </footer>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/4b2e8e6e6a.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="a11y-tools.js"></script>
+        <script>
+        // Check if user is logged in
+        document.addEventListener('DOMContentLoaded', function() {
+            checkUserAuthentication();
+        });
+    </script>
+</body>
+
+</html>

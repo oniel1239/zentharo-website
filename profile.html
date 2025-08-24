@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | Zentharo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+    <!-- Include header -->
+    <!-- Particle Background Canvas -->
+    <canvas id="particle-canvas" class="particles"></canvas>
+    <nav>
+        <div class="logo"> <span class="highlight"></span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="request-approval.html">Requests</a></li>
+            <li><a href="profile.html" class="active">Profile</a></li>
+            <li><a href="#" id="logoutLink">Logout</a></li>
+        </ul>
+        <div class="user-info">
+            <span id="userNameDisplay"></span>
+        </div>
+        <div class="hamburger">☰</div>
+    </nav>
+    <div class="user-info-display"></div>
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>User Profile</h1>
+            <h2>Manage Your Account</h2>
+            <p class="hero-sub">Update your personal information and change your password.</p>
+        </div>
+        <div class="hero-bg-effect"></div>
+    </header>
+
+    <main>
+        <section class="profile-section">
+            <h2>Profile Settings</h2>
+            <div class="profile-container">
+                <div class="profile-card">
+                    <h3>Change Name</h3>
+                    <form id="nameForm" class="profile-form">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="New Name" required>
+                        </div>
+                        <button type="submit" class="profile-button">Update Name</button>
+                    </form>
+                </div>
+
+                <div class="profile-card">
+                    <h3>Change Password</h3>
+                    <form id="passwordForm" class="profile-form">
+                        <div class="form-group">
+                            <input type="password" name="currentPassword" placeholder="Current Password" required>
+                            <input type="password" name="newPassword" placeholder="New Password" required>
+                            <input type="password" name="confirmPassword" placeholder="Confirm New Password" required>
+                        </div>
+                        <button type="submit" class="profile-button">Change Password</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Include footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Zentharo <span class="highlight">Software Solutions</span></div>
+            <div class="footer-social-links">
+                <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <p>© 2025 Zentharo Software Solutions. All rights reserved.</p>
+    </footer>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/4b2e8e6e6a.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script>
+        // Check if user is logged in
+        document.addEventListener('DOMContentLoaded', function() {
+            checkUserAuthentication();
+            handleNameChangeFormSubmission();
+            handlePasswordChangeFormSubmission();
+        });
+    </script>
+</body>
+
+</html>

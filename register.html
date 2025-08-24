@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Zentharo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+    <!-- Include header -->
+    <!-- Particle Background Canvas -->
+    <canvas id="particle-canvas" class="particles"></canvas>
+    <nav>
+        <div class="logo"> <span class="highlight"></span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+        </ul>
+        <div class="user-info">
+            <span id="userNameDisplay"></span>
+        </div>
+        <div class="hamburger">☰</div>
+    </nav>
+    <div class="user-info-display"></div>
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>Create Your Account</h1>
+            <h2>Request Management System</h2>
+            <p class="hero-sub">Register to access your project requests and manage your account.</p>
+        </div>
+        <div class="hero-bg-effect"></div>
+    </header>
+
+    <main>
+        <section class="login-section">
+            <h2>Register</h2>
+            <form id="registerForm" class="login-form">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Full Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="password" name="password" placeholder="Choose a Password" required>
+                    <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit" class="login-button">Register</button>
+                <p class="form-footer">Already have an account? <a href="login.html">Login</a></p>
+            </form>
+        </section>
+    </main>
+
+    <!-- Include footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Zentharo <span class="highlight">Software Solutions</span></div>
+            <div class="footer-social-links">
+                <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <p>© 2025 Zentharo Software Solutions. All rights reserved.</p>
+    </footer>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/4b2e8e6e6a.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script>
+        // Handle registration form submission
+        document.addEventListener('DOMContentLoaded', function() {
+            handleRegistrationFormSubmission();
+        });
+    </script>
+</body>
+
+</html>

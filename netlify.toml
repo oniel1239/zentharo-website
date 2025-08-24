@@ -1,0 +1,30 @@
+[build]
+  command = "npm run build"  # Command to run the build process
+  publish = "dist"           # Directory containing the built site files
+  environment = {            # Environment variables for the build
+    NODE_VERSION = "18"
+    API_KEY = "your-api-key-here"
+  }
+
+[functions]
+  directory = "functions"    # Directory where serverless functions are stored
+
+[[redirects]]
+  from = "/old-page/*"       # Redirect all requests from /old-page/* to new path
+  to = "/new-page/:splat"    # Preserve the URL structure with :splat
+  status = 301               # Permanent redirect
+
+[[redirects]]
+  from = "/api/*"            # Proxy API requests to an external API
+  to = "https://api.example.com/:splat"
+  status = 200               # Proxy without redirecting
+
+[[headers]]
+  for = "/*"                 # Apply headers to all paths
+  [headers.values]
+    Cache-Control = "public, max-age=3600"  # Cache assets for 1 hour
+    X-Frame-Options = "DENY"                # Prevent clickjacking
+    X-Content-Type-Options = "nosniff"      # Prevent MIME-type sniffing
+
+[context.production.environment]
+  ENV = "production"         # Environment variable specific to production

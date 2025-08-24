@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Zentharo</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Register | Zentharo</title>
+    <link rel="stylesheet" href="D:/websites ideas/website3/Zentharo-website/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
@@ -27,23 +27,25 @@
     <div class="user-info-display"></div>
     <header class="hero-section">
         <div class="hero-content">
-            <h1>Login to Your Account</h1>
+            <h1>Create Your Account</h1>
             <h2>Request Management System</h2>
-            <p class="hero-sub">Access your project requests and manage your account.</p>
+            <p class="hero-sub">Register to access your project requests and manage your account.</p>
         </div>
         <div class="hero-bg-effect"></div>
     </header>
 
     <main>
         <section class="login-section">
-            <h2>Login</h2>
-            <form id="loginForm" class="login-form">
+            <h2>Register</h2>
+            <form id="registerForm" class="login-form">
                 <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Full Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
-                    <input type="password" name="password" placeholder="Your Password" required>
+                    <input type="password" name="password" placeholder="Choose a Password" required>
+                    <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
                 </div>
-                <button type="submit" class="login-button">Login</button>
-                <p class="form-footer">Don't have an account? <a href="register.html">Register</a></p>
+                <button type="submit" class="login-button">Register</button>
+                <p class="form-footer">Already have an account? <a href="login.html">Login</a></p>
             </form>
         </section>
     </main>
@@ -64,7 +66,12 @@
     <!-- Font Awesome for icons -->
     <script src="https://kit.fontawesome.com/4b2e8e6e6a.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
-    <script src="login-fix.js"></script>
+    <script>
+        // Handle registration form submission
+        document.addEventListener('DOMContentLoaded', function() {
+            handleRegistrationFormSubmission();
+        });
+    </script>
 </body>
 
 </html>

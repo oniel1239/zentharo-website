@@ -2776,3 +2776,11 @@ window.addEventListener('scroll', () => {
         }
     }
 });
+// before (local dev):
+// fetch('http://localhost:3000/api/requests', ...)
+
+// after (Netlify):
+fetch('/api/requests', { method: 'GET' /* ... */ })
+fetch('/api/requests', { method: 'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data) })
+fetch('/api/login',    { method: 'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({email, password}) })
+

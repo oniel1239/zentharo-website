@@ -6,22 +6,5 @@
 
 [context.production.environment]
   ENV = "production"
-
-[[redirects]]
-  from = "/api/*"
-  to = "https://your-backend-url.com/api/:splat"
-  status = 200
-
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Cache-Control = "public, max-age=3600"
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://your-backend-url.com;"
-
-
-[context.production]
-  [context.production.environment]
-    ENV = "production"
+  API_URL = "https://oniel1239.github.io/zentharo-website/"
+  GITHUB_TOKEN = "ghp_3609542f4d87660432317b6029a13731c542"

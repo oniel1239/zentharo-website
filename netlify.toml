@@ -1,6 +1,11 @@
 [build]
   publish = "."
 
+[functions]
+  directory = "netlify/functions"
+
+[context.production.environment]
+  ENV = "production"
 
 [[redirects]]
   from = "/api/*"

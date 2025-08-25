@@ -1,4 +1,3 @@
-
 const mongoose = require('mongoose');
 
 let conn = null;
@@ -42,45 +41,31 @@ exports.handler = async function(event, context) {
     };
   }
 
-  if (event.httpMethod === 'POST') {
-    try {
-      const data = JSON.parse(event.body);
-      const request = new Request(data);
-      await request.save();
-      return {
-        statusCode: 201,
-        headers: corsHeaders,
-        body: JSON.stringify(request)
-      };
-    } catch (error) {
-      return {
-        statusCode: 400,
-        headers: corsHeaders,
-        body: JSON.stringify({ error: error.message })
-      };
-    }
+  if (event.httpMethod !== 'POST') {
+    return {
+      statusCode: 405,
+      headers: corsHeaders,
+      body: JSON.stringify({ error: 'Method Not Allowed' })
+    };
   }
 
-  if (event.httpMethod === 'GET') {
-    try {
-      const requests = await Request.find().sort({ submittedTimestamp: -1 });
-      return {
-        statusCode: 200,
-        headers: corsHeaders,
-        body: JSON.stringify(requests)
-      };
-    } catch (error) {
-      return {
-        statusCode: 500,
-        headers: corsHeaders,
-        body: JSON.stringify({ error: error.message })
-      };
-    }
+  try {
+    const data = JSON.parse(event.body);
+    const request = new Request({
+      ...data,
+      submittedTimestamp: Date.now()
+    });
+    await request.save();
+    return {
+      statusCode: 201,
+      headers: corsHeaders,
+      body: JSON.stringify({ message: 'Request submitted successfully' })
+    };
+  } catch (err) {
+    return {
+      statusCode: 500,
+      headers: corsHeaders,
+      body: JSON.stringify({ error: 'Server error' })
+    };
   }
-
-  return {
-    statusCode: 405,
-    headers: corsHeaders,
-    body: JSON.stringify({ error: 'Method Not Allowed' })
-  };
 };

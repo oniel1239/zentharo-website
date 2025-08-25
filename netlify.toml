@@ -6,3 +6,8 @@
 
 [context.production.environment]
   ENV = "production"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200

@@ -1,4 +1,18 @@
 // --- Zentharo Professional Script.js ---
+// Redirect to login if not authenticated on protected pages
+(function() {
+    const protectedPages = [
+        '/request-approval.html',
+        '/register.html'
+    ];
+    const currentPath = window.location.pathname;
+    if (protectedPages.includes(currentPath)) {
+        const token = localStorage.getItem('authToken');
+        if (!token) {
+            window.location.href = '/login.html';
+        }
+    }
+})();
 // Prevent browser from restoring scroll position on reload (do this as early as possible)
 if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
